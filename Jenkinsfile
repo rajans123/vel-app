@@ -14,7 +14,7 @@ pipeline {
 				}
 		}
 	}
-		stage ('start apache'){
+		stage ('start apache') {
 		
 				steps {
 				
