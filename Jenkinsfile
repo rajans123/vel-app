@@ -1,33 +1,15 @@
 pipeline {
+
+	agent any
 	
-	agent {
-	
-		label 'built-in'
-	}
 	stages {
 	
-		stage ('install apache') {
-				
-				steps {
-					
-					sh "yum install httpd -y"
-				}
-		}
-	
-		stage ('start apache') {
+		stage ('print echo statement') {
 		
-				steps {
-				
-					sh "service httpd start"
-				}
+			steps {
+			
+				echo "This is my first Multibranch-Pipeline Job"
+			}
 		}
-		stage ('deploy index file') {
-		
-				steps {
-				
-					sh "cp -r index.html /var/www/html/"
-					sh "chmod -R 777 /var/www/html/index.html"
-				}
-		}
-}
+	}
 }
